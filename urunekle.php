@@ -35,10 +35,16 @@
 	{
 		
 		
-		
-		
-		
-		
-		
+	if($_POST["uadi"]=="" || $_POST["umarkasi"]=="" || $_POST["ufiyati"]=="")
+		{
+			echo"Eksik bilgileri doldurunuz";
+		}
+		else
+		{
+			$dosya=fopen("urun.txt","a");
+			$yazilacak=$_POST["adi"]."-".$_POST["soyadi"]."-".$_POST["no"]."\n";
+			fputs($dosya,$yazilacak);
+			echo"********Sisteme Kaydiniz Yapilmistir*********";
+		}
 	}
 ?>
